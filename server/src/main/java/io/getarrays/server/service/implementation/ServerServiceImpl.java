@@ -32,8 +32,6 @@ public class ServerServiceImpl implements ServerService {
         return serverRepo.save(server);
     }
 
-   
-
     @Override
     public Server ping(String ipAddress) throws IOException {
         log.info("Pinging server IP: {}", ipAddress);
@@ -43,7 +41,7 @@ public class ServerServiceImpl implements ServerService {
         serverRepo.save(server);
         return server;
     }
-    
+
     @Override
     public Collection<Server> list(int limit) {
         log.info("Fetching all servers");
@@ -68,7 +66,7 @@ public class ServerServiceImpl implements ServerService {
         serverRepo.deleteById(id);
         return Boolean.TRUE;
     }
-    
+
     private String setServerImageUrl() {
         String[] imageNames = {
                 "server-img-1.png",
